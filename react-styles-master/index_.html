@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Tester Page</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://fb.me/react-0.14.7.js"></script>
+<script src="https://fb.me/react-dom-0.14.7.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+
+
+</head>
+<body>
+    <div id="testId">
+
+    </div>
+
+    <script type="text/babel">
+    var divStyle = {
+                        color: 'green',
+                    };
+
+    var ProgressBar= React.createClass({
+  
+        render :function(){
+            var percentage = this.props.percentage + '%';
+            var divStyle_ = this.props.customStyle;
+
+            return <div>
+
+            <h2 style={this.props.customStyle}>{this.props.percentage}% Complete</h2>
+            <div className='progress'>
+                <div className='progress-bar'
+                role='progressbar'
+                aria-valuenow={this.props.percentage}
+                aria-valuemin='0'
+                aria-valuemax='100'
+                style={{width: percentage}}>
+                </div>
+            </div>
+            </div>
+
+        }
+    });
+var divStyle_ = {
+                color: 'green',
+            };
+
+ReactDOM.render(<ProgressBar percentage='10' id="progressbar_id" customStyle={divStyle_} />,document.getElementById('testId'));
+
+
+    </script>
+
+
+</body>
+</html>
